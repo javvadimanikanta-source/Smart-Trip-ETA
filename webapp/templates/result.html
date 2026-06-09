@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Result</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="page">
+    <div class="card result-card">
+        <h1> SmartTrip Result</h1>
+
+        <div class="result-box">
+            <p>Estimated Taxi Travel Time</p>
+            <h2>{{ prediction }} minutes</h2>
+        </div>
+
+        <p class="note">
+            Prediction generated using a trained Random Forest machine learning model.
+        </p>
+
+        <a class="link-btn" href="/">Predict Another Trip</a>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SmartTrip Prediction</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+<div class="page">
+    <div class="card">
+        <div class="header">
+            <h1> Smart Trip </h1>
+            <p>Intelligent Taxi Trip Duration Prediction</p>
+        </div>
+
+        <form action="/predict" method="POST">
+            <div class="form-group">
+                <label>Distance (km)</label>
+                <input type="number" step="0.1" name="distance" placeholder="Example: 8.5" required>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+                    <label>Pickup Hour</label>
+                    <input type="number" min="0" max="23" name="hour" placeholder="0 - 23" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Pickup Minute</label>
+                    <input type="number" min="0" max="59" name="minute" placeholder="0 - 59" required>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Month</label>
+                <input type="number" min="1" max="12" name="month" placeholder="Example: 6" required>
+            </div>
+
+            <div class="form-group">
+                <label>Weekday</label>
+                <select name="weekday" required>
+                    <option value="">Select Day</option>
+                    <option value="0">Monday</option>
+                    <option value="1">Tuesday</option>
+                    <option value="2">Wednesday</option>
+                    <option value="3">Thursday</option>
+                    <option value="4">Friday</option>
+                    <option value="5">Saturday</option>
+                    <option value="6">Sunday</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Passenger Count</label>
+                <input type="number" min="1" max="6" name="passenger_count" placeholder="Example: 2" required>
+            </div>
+
+                    <button type="submit">Predict Trip Duration</button>
+    </form>
+
+    <a class="history-link" href="/history">
+        View Prediction History
+    </a>
+
+</div>
+</div>
+
+</body>
+</html>

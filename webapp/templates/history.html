@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction History</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="page">
+    <div class="card wide-card">
+        <h1>Prediction History</h1>
+
+        <table>
+            <tr>
+                <th>Distance</th>
+                <th>Time</th>
+                <th>Rounded Hour</th>
+                <th>Month</th>
+                <th>Weekday</th>
+                <th>Passengers</th>
+                <th>Prediction</th>
+                <th>Date</th>
+            </tr>
+
+            {% for row in records %}
+            <tr>
+                <td>{{ row[0] }} km</td>
+                <td>{{ row[1] }}:{{ "%02d"|format(row[2]) }}</td>
+                <td>{{ row[3] }}</td>
+                <td>{{ row[4] }}</td>
+                <td>{{ row[5] }}</td>
+                <td>{{ row[6] }}</td>
+                <td>{{ row[7] }} min</td>
+                <td>{{ row[8] }}</td>
+            </tr>
+            {% endfor %}
+        </table>
+
+        <a class="link-btn" href="/">Back to Home</a>
+    </div>
+</div>
+
+</body>
+</html>
