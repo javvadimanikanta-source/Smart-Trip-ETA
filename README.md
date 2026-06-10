@@ -1,5 +1,9 @@
 # Smart-Trip-ETA
 
+## Live Demo
+
+[Click here to try the live app](https://smart-trip-eta.onrender.com)
+
 A machine learning project that predicts taxi trip duration based on travel distance, pickup time, day of the week, month, and passenger count.
 
 ## Project Overview
