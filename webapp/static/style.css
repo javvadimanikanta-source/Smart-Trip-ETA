@@ -198,3 +198,33 @@ td {
 tr:hover {
     background: #f8fafc;
 }
+.top-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #f8fafc;
+    padding: 10px 14px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #475569;
+}
+
+.top-bar a {
+    color: #2563eb;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.top-bar a:hover {
+    text-decoration: underline;
+}
+
+.message {
+    background: #fee2e2;
+    color: #991b1b;
+    padding: 10px;
+    border-radius: 8px;
+    text-align: center;
+    font-size: 14px;
+}

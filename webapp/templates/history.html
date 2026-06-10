@@ -8,33 +8,43 @@
 
 <div class="page">
     <div class="card wide-card">
-        <h1>Prediction History</h1>
 
-        <table>
-            <tr>
-                <th>Distance</th>
-                <th>Time</th>
-                <th>Rounded Hour</th>
-                <th>Month</th>
-                <th>Weekday</th>
-                <th>Passengers</th>
-                <th>Prediction</th>
-                <th>Date</th>
-            </tr>
+        <div class="top-bar">
+            <span>User: {{ username }}</span>
+            <a href="/logout">Logout</a>
+        </div>
 
-            {% for row in records %}
-            <tr>
-                <td>{{ row[0] }} km</td>
-                <td>{{ row[1] }}:{{ "%02d"|format(row[2]) }}</td>
-                <td>{{ row[3] }}</td>
-                <td>{{ row[4] }}</td>
-                <td>{{ row[5] }}</td>
-                <td>{{ row[6] }}</td>
-                <td>{{ row[7] }} min</td>
-                <td>{{ row[8] }}</td>
-            </tr>
-            {% endfor %}
-        </table>
+        <h1>My Prediction History</h1>
+
+        {% if records %}
+            <table>
+                <tr>
+                    <th>Distance</th>
+                    <th>Time</th>
+                    <th>Rounded Hour</th>
+                    <th>Month</th>
+                    <th>Weekday</th>
+                    <th>Passengers</th>
+                    <th>Prediction</th>
+                    <th>Date</th>
+                </tr>
+
+                {% for row in records %}
+                <tr>
+                    <td>{{ row[0] }} km</td>
+                    <td>{{ row[1] }}:{{ "%02d"|format(row[2]) }}</td>
+                    <td>{{ row[3] }}</td>
+                    <td>{{ row[4] }}</td>
+                    <td>{{ row[5] }}</td>
+                    <td>{{ row[6] }}</td>
+                    <td>{{ row[7] }} min</td>
+                    <td>{{ row[8] }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+        {% else %}
+            <p class="note">No predictions found for this user.</p>
+        {% endif %}
 
         <a class="link-btn" href="/">Back to Home</a>
     </div>

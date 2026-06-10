@@ -5,10 +5,17 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
 <body>
+
 <div class="page">
     <div class="card">
+
+        <div class="top-bar">
+            <span>Logged in as: {{ username }}</span>
+            <a href="/logout">Logout</a>
+        </div>
+
         <div class="header">
-            <h1> Smart Trip </h1>
+            <h1>Smart Trip</h1>
             <p>Intelligent Taxi Trip Duration Prediction</p>
         </div>
 
@@ -54,14 +61,11 @@
                 <input type="number" min="1" max="6" name="passenger_count" placeholder="Example: 2" required>
             </div>
 
-                    <button type="submit">Predict Trip Duration</button>
-    </form>
+            <button type="submit">Predict Trip Duration</button>
+        </form>
 
-    <a class="history-link" href="/history">
-        View Prediction History
-    </a>
-
-</div>
+        <a class="history-link" href="/history">View My Prediction History</a>
+    </div>
 </div>
 
 </body>
